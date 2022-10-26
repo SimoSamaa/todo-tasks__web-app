@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo Tasks</title>
+        <link rel="icon" href="images/logo.png">
+        <!-- style-css -->
+        <link rel="stylesheet" href="./css/main-style.css">
+        <link rel="stylesheet" href="./css/responsive.css">
+        <!-- script-js -->
+        <script defer src="./js/header&setting.js"></script>
+        <script defer src="./js/main.js"></script>
+    </head>
+
+    <body>
+        <!-- header -->
+        <header class="shadow radius">
+            <!-- profile -->
+            <div class="profile">
+                <!-- img-profile -->
+                <div class="img-profile radius50"><img src="images/user.svg" alt="logo"></div>
+                <!-- name-profile -->
+                <div class="name-profile">
+                    <h3>What's up</h3>
+                    <p data-name="name here" class="name-user">name here</p>
+                </div>
+            </div>
+            <!-- setting -->
+            <div class="setting">
+                <img src="images/gear.svg" alt="setting">
+            </div>
+        </header>
+        <!-- show-setting -->
+        <dialog class="radius">
+            <div class="setting-close"><img src="images/xmark.svg" alt="close"></div>
+            <!-- change-img-profile -->
+            <div class="change-img-profile">
+                <div class="change-img radius50">
+                    <img src="images/user.svg" alt="img-setting">
+                </div>
+                <div class="btns">
+                    <input type="file" id="upload" accept="image/png,image/jpeg">
+                    <label class="btn-porofile btn-upload-img radius3PX shadow" for="upload">change Photo</label>
+                    <button class="btn-porofile btn-delet-img shadow radius3PX">
+                        <img class="icon" src="images/trash.svg" alt="trash">
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <br>
+            <p>size recommended 256x256px, max size <strong>1MB</strong>.
+            </p>
+            <!-- input-change-name -->
+            <div class="setting-change-user-name">
+                <div class="input-change-name">
+                    <img src="images/user-pen.svg" alt="user-pen">
+                    <input type="text" placeholder="Name" id="place-holder" maxlength="15">
+                    <label class="label-user" for="place-holder">Name</label>
+                </div>
+                <!-- submit name chnge -->
+                <button class="btn-change-user-name shadow radius3PX btn-upload-img">Submit</button>
+            </div>
+        </dialog>
+
+        <!-- tood list category -->
+        <br>
+        <h4>Pick a category</h4>
+        <div class="todo-list-category">
+            <!-- Business -->
+            <label class="business radius shadow">
+                <input type="radio" value="business" name="category">
+                <span class="radio-span radius50"></span>
+                <p>
+                    <img src="images/business.svg" alt="business">
+                    Business
+                </p>
+            </label>
+            <!-- Personal -->
+            <label class="personal radius shadow">
+                <input type="radio" value="personal" name="category">
+                <span class="radio-span radius50"></span>
+                <p>
+                    <img src="images/personal.svg" alt="personal">
+                    Personal
+                </p>
+            </label>
+        </div>
+
+        <!-- write your todo list and add a task -->
+        <br>
+        <h4>What's on your todo?</h4>
+
+        <div class="container-write-add">
+            <!-- input write a task -->
+            <div class="write-todo-list">
+                <input type="text" placeholder="Add a Task">
+                <img src="images/pen-solid.svg" alt="pen">
+            </div>
+            <!-- button add task -->
+            <button class="btn-add-tasks radius">
+                <img src="images/plus-solid.svg" alt="add">
+                ADD TODO
+            </button>
+        </div>
+        <!-- start tod -->
+        <h4 class="start-todo">TODO LIST</h4>
+        <div class="add-tasks">
+
+        </div>
+    </body>
+
+</html>
