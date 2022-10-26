@@ -89,7 +89,6 @@ body {
     padding: 3em 2em;
     min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
 }
 
 /* header */
@@ -628,7 +627,7 @@ input[type="radio"]:checked~.radio-span::before {
 .start-todo {
     color: var(--black-clr);
     font-weight: normal;
-    margin-block: 2em 1em;
+    margin-block: 2em .5em;
     letter-spacing: 1.5px;
 }
 
@@ -637,6 +636,8 @@ input[type="radio"]:checked~.radio-span::before {
     display: flex;
     flex-direction: column;
     gap: 2em;
+    overflow: hidden;
+    padding: .5em .1em 1.4em;
 }
 
 .add-item {
