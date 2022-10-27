@@ -194,9 +194,9 @@
         width: 12px;
     }
 
-    .add-tasks {
+/*     .add-tasks {
         --height: 200px;
-    }
+    } */
 }
 
 @media (max-width:300px) {
