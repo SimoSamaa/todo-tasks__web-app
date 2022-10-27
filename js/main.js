@@ -165,6 +165,12 @@ function createTodoTask(arrayOfTasks) {
         // button delet task from page
         deletetButton.onclick = () => {
             myDiv.remove()
+            if (containerAddTasks.innerHTML == "") {
+                document.documentElement.style.setProperty("--mess", "")
+                containerAddTasks.style.cssText
+                    = "background-color:var(--white-clr); height:240px;"
+                containerAddTasks.className = "add-tasks radius shadow";
+            };
             deletTasksFromLocalStorage(myDiv.getAttribute("data-id"));
         };
         // fade animatio tasks
@@ -180,6 +186,14 @@ function createTodoTask(arrayOfTasks) {
                 myDiv.classList.remove("show-task");
             };
         });
+
+        if (containerAddTasks != "") {
+            document.documentElement.style.setProperty("--mess", " ");
+            containerAddTasks.style.cssText
+                = "background-color:transparent; height:auto;"
+            containerAddTasks.className = "add-tasks";
+        }
+
     });
 };
 

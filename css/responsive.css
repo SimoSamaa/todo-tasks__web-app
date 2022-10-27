@@ -1,5 +1,9 @@
 @media (max-width:750px) {
 
+    body {
+        padding-block: 1.5em;
+    }
+
     header {
         padding: 1em;
     }

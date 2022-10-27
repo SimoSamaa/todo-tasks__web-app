@@ -28,6 +28,9 @@ html {
     /* transition */
     --trans3s: 300ms ease;
     --trans5s: 500ms ease;
+
+    /* message */
+    --mess: "ADD TASKS";
 }
 
 ::-webkit-scrollbar {
@@ -637,7 +640,19 @@ input[type="radio"]:checked~.radio-span::before {
     flex-direction: column;
     gap: 2em;
     overflow: hidden;
-    padding: .5em .1em 1.4em;
+    padding: 1.7em .1em 1.4em;
+    background-color: var(--white-clr);
+    height: 241px;
+    position: relative;
+}
+
+.add-tasks::before {
+    content: var(--mess);
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
 }
 
 .add-item {
