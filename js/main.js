@@ -168,7 +168,7 @@ function createTodoTask(arrayOfTasks) {
             if (containerAddTasks.innerHTML == "") {
                 document.documentElement.style.setProperty("--mess", "")
                 containerAddTasks.style.cssText
-                    = "background-color:var(--white-clr); height:240px;"
+                    = "background-color:var(--white-clr); height:var(--height);"
                 containerAddTasks.className = "add-tasks radius shadow";
             };
             deletTasksFromLocalStorage(myDiv.getAttribute("data-id"));

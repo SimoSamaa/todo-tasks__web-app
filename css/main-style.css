@@ -31,6 +31,9 @@ html {
 
     /* message */
     --mess: "ADD TASKS";
+
+    /*  */
+    --height: 241px;
 }
 
 ::-webkit-scrollbar {
@@ -642,7 +645,7 @@ input[type="radio"]:checked~.radio-span::before {
     overflow: hidden;
     padding: 1.7em .1em 1.4em;
     background-color: var(--white-clr);
-    height: 241px;
+    height: var(--height);
     position: relative;
 }
 

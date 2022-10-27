@@ -193,6 +193,10 @@
         content: "";
         width: 12px;
     }
+
+    .add-tasks {
+        --height: 144px;
+    }
 }
 
 @media (max-width:300px) {
