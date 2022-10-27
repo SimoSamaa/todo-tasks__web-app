@@ -167,8 +167,7 @@ function createTodoTask(arrayOfTasks) {
             myDiv.remove()
             if (containerAddTasks.innerHTML == "") {
                 document.documentElement.style.setProperty("--mess", "")
-                containerAddTasks.style.cssText
-                    = "background-color:var(--white-clr); height:var(--height);"
+                containerAddTasks.style.background = "var(--white-clr)";
                 containerAddTasks.className = "add-tasks radius shadow";
             };
             deletTasksFromLocalStorage(myDiv.getAttribute("data-id"));
@@ -189,8 +188,7 @@ function createTodoTask(arrayOfTasks) {
 
         if (containerAddTasks != "") {
             document.documentElement.style.setProperty("--mess", " ");
-            containerAddTasks.style.cssText
-                = "background-color:transparent; height:auto;"
+            containerAddTasks.style.background = "transparent";
             containerAddTasks.className = "add-tasks";
         }
 
