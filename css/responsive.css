@@ -75,9 +75,11 @@
         right: 1em;
     }
 
-    .add-item {
+    .add-item,
+    .add-item:nth-child(odd) {
         padding: .8em;
         gap: .5em;
+        translate: 0;
     }
 
     .add-item .input-text {
