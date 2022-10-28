@@ -124,12 +124,17 @@ header.header-act {
     gap: 1em;
 }
 
+.img-profile-radius,
+.change-img-radius {
+    border: 3px solid var(--gray-clr);
+}
+
 .img-profile {
     width: 55px;
     height: 55px;
     background-color: var(--bg-clr);
     overflow: hidden;
-    outline: 3px solid var(--gray-clr);
+    position: relative;
 }
 
 .name-profile h3 {
@@ -266,7 +271,6 @@ dialog[closing]::backdrop {
     width: 150px;
     height: 150px;
     background-color: var(--bg-clr);
-    outline: 3px solid var(--gray-clr);
     overflow: hidden;
 }
 
@@ -685,7 +689,8 @@ input[type="radio"]:checked~.radio-span::before {
 }
 
 [data-category="business"] {
-    outline: 2px solid var(--blue-clr);
+    box-shadow: 0px 0px 0px 2px var(--blue-clr);
+
 }
 
 [data-category="business"]:hover {
@@ -693,7 +698,7 @@ input[type="radio"]:checked~.radio-span::before {
 }
 
 [data-category="personal"] {
-    outline: 2px solid var(--pink-clr);
+    box-shadow: 0px 0px 0px 2px var(--pink-clr);
 }
 
 [data-category="personal"]:hover {
