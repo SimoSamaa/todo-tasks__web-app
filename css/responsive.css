@@ -24,12 +24,12 @@
 
     dialog {
         width: 100%;
-        height: max-content;
-        padding: 1em 0;
+        height: fit-content;
     }
 
     dialog::backdrop {
         background-color: #fff;
+        pointer-events: none;
     }
 
     dialog p {
@@ -123,17 +123,20 @@
     :is(.edit-button, .delete-button):hover::before {
         display: none;
     }
-}
-
-@media (max-width:600px) {
-    dialog {
-        min-height: 100%;
-        padding-top: 6em;
-    }
 
     .setting-close {
         top: 1em;
         right: 0;
+    }
+}
+
+@media (max-width:667px) {
+    dialog {
+        min-height: 100%;
+    }
+
+    .dialog-container {
+        padding-top: 5em;
     }
 
     .btns {
@@ -174,6 +177,10 @@
 @media (max-width:479px) {
     body {
         padding: 2em 1em 3em;
+    }
+
+    .dialog-container {
+        padding-inline: 0;
     }
 
     :is(.business, .personal) {

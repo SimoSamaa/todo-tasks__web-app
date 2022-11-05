@@ -191,6 +191,7 @@ dialog {
 
 .dialog-container {
     padding: 2em;
+    width: 100%;
 }
 
 dialog::-webkit-scrollbar {
