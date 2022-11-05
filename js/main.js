@@ -125,7 +125,7 @@ function createTodoTask(arrayOfTasks) {
         let t = "0"
         taskTiming.textContent
             = `${dateTiming.getMonth() + 1} /
-                ${dateTiming.getDate()} /
+                ${dateTiming.getDate() <= 10 ? t + dateTiming.getDate() : dateTiming.getDate()} /
                 ${dateTiming.getHours() <= 10 ? t + dateTiming.getHours() : dateTiming.getHours()} :
                 ${dateTiming.getMinutes() < 10 ? t + dateTiming.getMinutes() : dateTiming.getMinutes()}
             `;

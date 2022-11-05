@@ -11,10 +11,10 @@ toggleRight.className = "toggle-right shadow";
 toggleRight.innerHTML = `
 <img class="img-ani" src="images/ellipsis-svgrepo-com.svg"></img>
 <div class="menu-container">
-    <div class="delete-all-tasks">
+    <div class="delete-all-tasks" title="clear all tasks">
         <img src="images/delete-all-icon.svg"></img>
     </div>
-    <div class="btn-up">
+    <div class="btn-up" title="go up">
         <img src="images/up.svg"></img>
     </div>
 </div>
@@ -52,12 +52,36 @@ document.querySelector(".btn-up").onclick = function () {
     });
 };
 
+let = alertClearTasks = document.createElement("div");
+alertClearTasks.className = "alert-clear-tasks"
 document.querySelector(".delete-all-tasks").onclick = function () {
-    window.localStorage.removeItem("data-array");
-    window.location.reload(arrayOfTasks);
-    ![...containerAddTasks.children].forEach(deletAllTasks => {
-        deletAllTasks.remove();
-    });
+    alertClearTasks.innerHTML = `
+        <div class="aleart-cart radius">
+            <p>Are you sure do you want to delete all tasks !!!</p>
+            <div class="btns-alert">
+                <button class="delete-all radius3PX">Delet All</button>
+                <button class="cancel-delete radius3PX">Cancel</button>
+            </div>
+        </div>
+    `;
+
+    myBody.appendChild(alertClearTasks);
+    alertClearTasks.onclick = (e) => {
+        if (e.target != e.currentTarget) return;
+        alertClearTasks.remove();
+    };
+
+    document.querySelector(".cancel-delete").onclick = () => {
+        alertClearTasks.remove();
+    };
+
+    document.querySelector(".delete-all").onclick = () => {
+        window.localStorage.removeItem("data-array");
+        window.location.reload(arrayOfTasks);
+        ![...containerAddTasks.children].forEach(deletAllTasks => {
+            deletAllTasks.remove();
+        });
+    };
 };
 
 // button setting 
@@ -66,6 +90,13 @@ function gearSetting() {
     gear.style.animation = "forwards";
     myBody.style.overflow = "hidden";
 };
+
+dialog.addEventListener("click", (e) => {
+    if (e.target.nodeName === "DIALOG") {
+        dialog.close();
+        closeSetting();
+    }
+});
 
 gear.addEventListener("click", gearSetting);
 

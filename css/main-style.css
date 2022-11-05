@@ -184,9 +184,13 @@ dialog {
     translate: -50% -50%;
     border: 0;
     background-color: var(--white-clr);
-    padding: 2em;
     color: inherit;
     scrollbar-width: none;
+    z-index: 150;
+}
+
+.dialog-container {
+    padding: 2em;
 }
 
 dialog::-webkit-scrollbar {
@@ -194,15 +198,15 @@ dialog::-webkit-scrollbar {
 }
 
 dialog[open] {
-    animation: fade-in 500ms ease forwards;
-    -webkit-animation: fade-in 500ms ease forwards;
+    animation: fade-in 500ms ease-in forwards;
+    -webkit-animation: fade-in 500ms ease-in forwards;
     opacity: 1;
 }
 
 dialog[closing] {
     display: block;
-    animation: fade-out 500ms ease forwards;
-    -webkit-animation: fade-out 500ms ease forwards;
+    animation: fade-out 500ms ease-out forwards;
+    -webkit-animation: fade-out 500ms ease-out forwards;
 }
 
 dialog::backdrop {
@@ -212,20 +216,20 @@ dialog::backdrop {
 }
 
 dialog[closing]::backdrop {
-    animation: backOpa-out 500ms ease forwards;
-    -webkit-animation: backOpa-out 500ms ease forwards;
+    animation: backOpa-out 500ms ease-out forwards;
+    -webkit-animation: backOpa-out 500ms ease-out forwards;
 }
 
 @keyframes fade-in {
     from {
-        top: 70%;
+        top: 100%;
         opacity: 0;
     }
 }
 
 @keyframes fade-out {
     to {
-        top: 70%;
+        top: 100%;
         opacity: 0;
     }
 }
@@ -421,8 +425,8 @@ input[type="text"] {
     color: var(--black-clr);
 }
 
-input[type="text"]:focus+.label-user,
-input[type="text"]:not(:placeholder-shown)+.label-user {
+input[type="text"]:focus + .label-user,
+input[type="text"]:not(:placeholder-shown) + .label-user {
     top: 0;
     font-weight: normal;
     color: var(--blue-clr);
@@ -553,7 +557,7 @@ input[type="radio"] {
     background-color: var(--pink-clr);
 }
 
-input[type="radio"]:checked~.radio-span::before {
+input[type="radio"]:checked ~ .radio-span::before {
     scale: 1;
 }
 
@@ -752,12 +756,12 @@ input[type="radio"]:checked~.radio-span::before {
     background: url("icons/square-check-solid\ 2.svg") no-repeat;
 }
 
-.add-item label input[type="checkbox"]:checked~span::before {
+.add-item label input[type="checkbox"]:checked ~ span::before {
     scale: 1;
     rotate: 360deg;
 }
 
-.add-item label input[type="checkbox"]:checked~span {
+.add-item label input[type="checkbox"]:checked ~ span {
     border: none;
     border-radius: .5em;
     -webkit-border-radius: .5em;
@@ -954,4 +958,70 @@ input[type="radio"]:checked~.radio-span::before {
 
 .btn-up {
     background-color: var(--blue-clr);
+}
+
+/* alert clear tasks */
+.alert-clear-tasks {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0/50%);
+    z-index: 200;
+    display: grid;
+    place-items: center;
+}
+
+.aleart-cart {
+    width: min(450px, 90%);
+    padding: 1.5em;
+    background-color: var(--white-clr);
+    display: flex;
+    flex-direction: column;
+    animation: test 500ms ease-in forwards;
+    -webkit-animation: test 500ms ease-in forwards;
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+@keyframes test {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aleart-cart p {
+    position: relative;
+    padding-left: 2em;
+    font-weight: bold;
+}
+
+.aleart-cart p::before {
+    content: url("icons/alert.svg");
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.btns-alert {
+    margin-top: 1em;
+    align-self: flex-end;
+}
+
+.btns-alert :is(.delete-all, .cancel-delete) {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--orange-clr);
+    color: var(--white-clr);
+    font-weight: bold;
+    padding: .5em;
+}
+
+.btns-alert :is(.delete-all, .cancel-delete):hover {
+    background-color: var(--orange-clr-hover);
 }
