@@ -136,7 +136,8 @@
     }
 
     .dialog-container {
-        padding-top: 5em;
+        padding-block: 5em 2.8em;
+
     }
 
     .btns {
