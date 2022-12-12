@@ -157,7 +157,7 @@ function createTodoTask(arrayOfTasks) {
         editButton.onclick = () => {
             const end = myInputText.value.length;
             myInputText.setSelectionRange(end, end);
-            myInputText.maxLength = inputWriteTodo.maxLength;
+//             myInputText.maxLength = inputWriteTodo.maxLength;
             myInputText.removeAttribute("readonly");
             myInputText.focus();
         };
